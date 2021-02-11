@@ -1,0 +1,17 @@
+[[package]]
+name = "spi"
+version = "0.2.0"
+description = "Pure Python SPI Interface using spidev"
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.9"
+content-hash = "8866b2786c1cf4c3ff7ec3e26a0fa2835e67b2bbc051ee06c00e684c95d021c7"
+
+[metadata.files]
+spi = [
+    {file = "spi-0.2.0.tar.gz", hash = "sha256:bae38a6b26a9a3be8df13a635f8aba8ce8c480086c9d94f5166f3dc9bb879cda"},
+]

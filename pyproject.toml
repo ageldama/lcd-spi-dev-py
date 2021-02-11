@@ -6,6 +6,7 @@ authors = ["jonghyouk yun <ageldama@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+spi = "^0.2.0"
 
 [tool.poetry.dev-dependencies]
 
