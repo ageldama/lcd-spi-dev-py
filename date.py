@@ -1,9 +1,9 @@
 import LCD_1in44
 import LCD_Config
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
-import subprocess
+from datetime import datetime
 import time
 
 
@@ -18,12 +18,16 @@ def main():
 
     print(LCD.width, LCD.height)
 
+    fnt = ImageFont.truetype('./FreeMono.ttf', 20)
+
     image = Image.new("RGB", (LCD.width, LCD.height), "BLACK")
     draw = ImageDraw.Draw(image)
 
     while True:
-        s = subprocess.check_output('date').decode('utf8').strip()
-        draw.text((0, 36), s, fill = "#00ff00")
+        draw.rectangle((0, 0, LCD.width-1, LCD.height-1), fill="BLACK")
+
+        s = datetime.now().strftime('%H:%M:%S')
+        draw.multiline_text((0, 36), s, fill="#00ff00", font=fnt)
 
         LCD.LCD_ShowImage(image,0,0)
         LCD_Config.Driver_Delay_ms(1)
