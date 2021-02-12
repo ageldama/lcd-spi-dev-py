@@ -77,15 +77,16 @@ def main():
 
     mover = Mover(max_pos=LCD.height - 1 - (fnt_size * 2))
 
-    while True:
-        rgb, rgb_i = rand_rgb()
-        rgb, rgb_i = '#000000', '#ffbf00'
+    # rgb, rgb_i = rand_rgb()
+    rgb_fg = '#000000'
+    rgb_bg = '#ffb6c1'
 
-        draw.rectangle((0, 0, LCD.width-1, LCD.height-1), fill=rgb)
+    while True:
+        draw.rectangle((0, 0, LCD.width-1, LCD.height-1), fill=rgb_bg)
 
         s = datetime.now().strftime('%H:%M:%S\n%f')
         draw.multiline_text((0, next(mover)),
-                            s, align='center', fill=rgb_i, font=fnt)
+                            s, align='center', fill=rgb_fg, font=fnt)
 
         LCD.LCD_ShowImage(image,0,0)
         LCD_Config.Driver_Delay_ms(1)
