@@ -36,8 +36,9 @@ def main():
 
     print(LCD.width, LCD.height)
 
+    fnt_size = 26
     fnt = ImageFont.truetype(
-        '/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf', 26)
+        '/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf', fnt_size)
 
     image = Image.new("RGB", (LCD.width, LCD.height), "BLACK")
     draw = ImageDraw.Draw(image)
@@ -48,7 +49,7 @@ def main():
         draw.rectangle((0, 0, LCD.width-1, LCD.height-1), fill=rgb)
 
         s = datetime.now().strftime('%H:%M:%S\n%f')
-        draw.multiline_text((0, LCD.height - (26 * 2)), s,
+        draw.multiline_text((0, LCD.height - 1 - (fnt_size * 2)), s,
                             align='center',
                             fill=rgb_i, font=fnt)
 
