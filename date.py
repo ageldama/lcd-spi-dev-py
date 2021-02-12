@@ -48,7 +48,7 @@ def main():
         draw.rectangle((0, 0, LCD.width-1, LCD.height-1), fill=rgb)
 
         s = datetime.now().strftime('%H:%M:%S\n%f')
-        draw.multiline_text((0, 36), s,
+        draw.multiline_text((0, LCD.height - (26 * 2)), s,
                             align='center',
                             fill=rgb_i, font=fnt)
 
