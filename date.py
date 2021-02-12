@@ -26,6 +26,16 @@ def rand_rgb():
             fmt_rgb(r_i, g_i, b_i),)
 
 
+import itertools
+import math
+
+def radians():
+    return (math.radians(i) for i in itertools.cycle(range(0, 360)))
+
+r = radians()
+while True:
+    print(next(r))
+
 def main():
     LCD = LCD_1in44.LCD()
 
